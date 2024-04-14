@@ -1,0 +1,119 @@
+Ребека Манева 226133
+
+1. Најпрво инсталирав Git и креирав мој профил со меил: rebekamaneva@gmail.com
+(се обидов со студентскиот меил меѓутоа ми требаше код за автентикација кој воопшто не стигна)
+(Update: стигна 7 часа покасно)
+
+2. Името променето во master
+
+3. Креирано
+
+4. Креирано
+mkdir SI_2024_lab1_226133
+cd SI_2024_lab1_226133
+git init
+git config --global user.email "rebekamaneva@gmail.com"
+git config --global user.name "RebekaManeva"
+git branch -M master
+
+5. Извршено со 
+git remote add origin https://github.com/RebekaManeva/SI_2024_lab1_226133.git
+git remote -v
+
+6. Извршено со
+touch README.md
+nano README.md
+mv README.md README.txt
+git add README.txt
+
+7. Откако ги преземав, следеше
+git add SILab1_2.java SILab1_1.java SILab1Main.java
+git commit -m "Add starter code"
+
+8. Синхронизирање
+git pull
+
+9. Отварање нови гранки
+git checkout -b bug1
+git checkout -b bug2
+
+10. git checkout bug1
+
+11. Откако ја поправив грешката
+nano SILab1_1.java
+git add SILab1_1.java
+git commit -m "Fix wrong condition in filterOddLengthStrings"
+git push origin bug1
+
+12. git checkout bug2
+
+13. Откако ја поправив грешката
+git add SILab1_2.java
+git add SILab1_2.java
+git commit -m "Fix wrong condition in makeBigStringFrom
+git push origin bug2
+
+14. git checkout bug1
+
+15. Додадов System.out.println(SILab1_1.filterOddLengthStrings(list)); и потоа 
+nano SILab1Main.java
+git add SILab1Main.java
+git commit -m "Call method filterOddLengthStrings in main class"
+
+
+16. git checkout bug2
+
+
+17. Додадов System.out.println(SILab1_2.makeBigStringFrom(list)); и потоа
+git add SILab1Main.java
+git commit -m "Call method makeBigStringFrom in main class"
+
+18. Синхронизирање
+git fetch
+git pull origin master
+git pull origin bug1
+git pull origin bug2
+
+19. git checkout master
+
+20. git merge bug1
+се појави проблем при merging 
+Auto-merging SILab1Main.java
+CONFLICT (content): Merge conflict in SILab1Main.java
+Automatic merge failed; fix conflicts and then commit the result.
+Го отворив фајлот, ги селектив да се изврши промената
+git add SILab1Main.java
+git commit -m "Spojuvanje na bug1 kon master"
+git push origin master
+
+21. Синхронизирање
+git fetch
+git pull origin master
+git pull origin bug1
+git pull origin bug2
+
+22. git checkout bug2
+
+23. git rebase master
+Се појави конфликт
+Auto-merging SILab1Main.java
+CONFLICT (content): Merge conflict in SILab1Main.java
+error: could not apply 0C64211... Call method makeBigStringFrom in main class
+го отворив документот, ги средив промените и потоа
+git add SILab1Main.java
+git rebase --continue
+
+24. git checkout master
+
+25. git merge bug2
+
+26. git pull origin master
+git pull origin bug1
+git pull origin bug2
+
+27. git push --force origin master
+git push --force origin bug1
+git push --force origin bug2
+
+28. touch logs.txt
+touch 226133.txt
